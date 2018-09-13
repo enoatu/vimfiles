@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd ~/vimfiles
 unlink ~/.vimrc
-ln -s .vimrc ~/.vimrc
+ln -s ~/vimfiles/.vimrc ~/.vimrc
 
