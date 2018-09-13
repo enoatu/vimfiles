@@ -22,7 +22,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('vim-scripts/bufferlist.vim')
   call dein#add('junegunn/vim-easy-align')
 
-  let s:toml = '~/.dein.toml'
+  let s:toml = '~/vimfiles/.dein.toml'
   call dein#load_toml(s:toml, {'lazy': 0})
   call dein#end()
   call dein#save_state()
