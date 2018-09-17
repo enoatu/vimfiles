@@ -18,7 +18,6 @@ endif
 
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
-  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
   call dein#add('vim-scripts/bufferlist.vim')
   call dein#add('junegunn/vim-easy-align')
 
@@ -117,15 +116,11 @@ set whichwrap=b,s,<,>,[,]
 set tabstop=4
 set shiftwidth=4
 vnoremap <silent> <C-p> "0p<CR>
-map <silent> <F1> :call BufferList()<CR>
-map <silent> <F2> :call BufferList()<CR>
-map <silent> <F3> :call BufferList()<CR>
-
+map <C-b> :call BufferList()<CR>
 syntax on
 colorscheme molokai
 "colorscheme random
 set t_Co=256
-
 
 "===================space red========================
 augroup HighlightTrailingSpaces
@@ -219,3 +214,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
  let g:user_emmet_leader_key='<C-t>'
  "====================vim-json=========================
  let g:vim_json_syntax_conceal = 0
+ "====================nerdtree============================
+ map <C-n> :NERDTreeToggle<CR>
+ "======================gitgutter===================
+ "画面をガタガタ言わせない
+ set signcolumn=yes
+ "タイピング終了後すぐに反映する
+ set updatetime=100
