@@ -14,4 +14,4 @@ cd vimproc.vim
 make
 ln -s vimproc.vim/lib/vimproc_linux64.so ..
 
-echo "\e[30;42;1msuccess\e[m"
+printf "\e[30;42;1msuccess\e[m\n"
