@@ -1,5 +1,5 @@
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 "dein Scripts-----------------------------
 " dein.vim がなければ github から落としてくる
@@ -16,8 +16,8 @@ if &compatible
 endif
 "set runtimepath+=/home/enotiru/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
   call dein#add('vim-scripts/bufferlist.vim')
   call dein#add('junegunn/vim-easy-align')
 
