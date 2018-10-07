@@ -98,7 +98,7 @@ set ttimeoutlen=10
 "  Start interactive EasyAlign for a motion/text object (e.g. gaip)
  nmap ga <Plug>(EasyAlign)
 
-set autoindent
+"set autoindent
 set smartindent
 
 set mouse=a
@@ -121,6 +121,10 @@ syntax on
 colorscheme molokai
 "colorscheme random
 set t_Co=256
+"================括弧補完===========
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 "===================space red========================
 augroup HighlightTrailingSpaces
