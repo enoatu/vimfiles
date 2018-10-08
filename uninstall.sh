@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu
+set -eux
 
 if [ -e ~/.vimrc ]; then
     unlink ~/.vimrc
@@ -11,7 +11,7 @@ elif [ -e ~/dotfiles/vimfiles ]; then
     cd ~/dotfiles/vimfiles
 else
     printf "\e[37;41;1m Please change current directory\e[m\n"
-    return
+    exit
 fi
 
 rm -rf dein
