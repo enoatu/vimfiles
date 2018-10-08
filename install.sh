@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+c
 set -eux
 
 if [ ! -e ./vimrc ]; then
@@ -15,6 +15,7 @@ if [ -e ~/vimfiles ]; then
     ln -sf ~/vimfiles/dein.toml ~/.dein.toml
 fi
 
+vim +:q
 mkdir -p dein/.cache/.vimrc/.dein/lib
 cd ./dein/.cache/.vimrc/.dein/lib
 git clone https://github.com/Shougo/vimproc.vim.git
