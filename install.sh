@@ -5,8 +5,13 @@ if [ -e ~/.vimrc ]; then
     rm ~/.vimrc
 fi
 
-cd ~/vimfiles
-ln -s ~/vimfiles/vimrc ~/.vimrc
+if [ -e ./vimfiles ]; then   
+    cd ./vimfiles
+    ln -s ~/vimfiles/vimrc ~/.vimrc
+else
+    printf "\e[37;41;1m Please change current directory \e[m\n"
+    return 
+fi
 
 if [ -e dein ]; then
     rm -rf dein
