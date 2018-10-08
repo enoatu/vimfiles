@@ -5,17 +5,16 @@ if [ -e ~/.vimrc ]; then
     rm ~/.vimrc
 fi
 
-if [ -e ./vimfiles ]; then   
-    cd ./vimfiles
-    ln -s ~/vimfiles/vimrc ~/.vimrc
-else
+if [ ! -e ./vimrc ]; then   
     printf "\e[37;41;1m Please change current directory \e[m\n"
-    return 
+    exit 
 fi
 
 if [ -e dein ]; then
     rm -rf dein
 fi
+
+ln -s ~/vimfiles/vimrc ~/.vimrc
 
 vim +:q
 mkdir -p dein/.cache/.vimrc/.dein/lib
@@ -30,7 +29,7 @@ elif [ -e ./lib/vimproc_mac.so ]; then
     ln -s vimproc.vim/lib/vimproc_mac.so .. #TODO
 else
     printf "\e[37;41;1m Couldn't find vimproc.so \e[m\n"
-    return
+    exit
 fi
 
 printf "\e[30;42;1mvim setup completed\e[m\n"
