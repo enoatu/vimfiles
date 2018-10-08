@@ -5,17 +5,8 @@ if [ -e ~/.vimrc ]; then
     rm ~/.vimrc
 fi
 
-if [ -e ~/vimfiles ]; then
-    cd ~/vimfiles
-    ln -s ~/vimfiles/vimrc ~/.vimrc
-elif [ -e ~/dotfiles/vimfiles ]; then
-    cd ~/dotfiles/vimfiles
-    sed "/let s:dein_dir/c\let s:dein_dir = expand('~/dotfiles/vimfiles/dein')" vimrc
-    ln -s ~/dotfiles/vimfiles/vimrc ~/.vimrc
-else
-    printf "\e[37;41;1m Please change current directory\e[m\n"
-    return
-fi
+cd ~/vimfiles
+ln -s ~/vimfiles/vimrc ~/.vimrc
 
 if [ -e dein ]; then
     rm -rf dein
