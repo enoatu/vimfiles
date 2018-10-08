@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -eu
+set -eux
 
 if [ ! -e ./vimrc ]; then
     printf "\e[37;41;1m Please change current directory \e[m\n"
@@ -16,7 +16,7 @@ if [ -e ~/vimfiles ]; then
 fi
 
 mkdir -p dein/.cache/.vimrc/.dein/lib
-cd dein/.cache/.vimrc/.dein/lib
+cd ./dein/.cache/.vimrc/.dein/lib
 git clone https://github.com/Shougo/vimproc.vim.git
 cd vimproc.vim
 make
