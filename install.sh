@@ -5,6 +5,11 @@ if [ -e ~/.vimrc ]; then
     rm ~/.vimrc
 fi
 
+if [ -e ~/.dein.toml ]; then
+    rm ~/.dein.toml
+fi
+
+
 if [ ! -e ./vimrc ]; then   
     printf "\e[37;41;1m Please change current directory \e[m\n"
     exit 
@@ -16,6 +21,7 @@ fi
 
 if [ -e ~/vimfiles ]; then
     ln -s ~/vimfiles/vimrc ~/.vimrc
+    ln -s ~/vimfiles/.dein.toml ~/.dein.toml
 fi
 
 vim +:q
