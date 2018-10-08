@@ -3,7 +3,7 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 "dein Scripts-----------------------------
 " dein.vim がなければ github から落としてくる
-let s:dein_dir = expand('~/vimfiles/dein')
+let s:dein_dir = expand('~/dotfiles/vimfiles/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
@@ -21,7 +21,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('vim-scripts/bufferlist.vim')
   call dein#add('junegunn/vim-easy-align')
 
-  let s:toml = '~/vimfiles/.dein.toml'
+  let s:toml = '~/.dein.toml'
   call dein#load_toml(s:toml, {'lazy': 0})
   call dein#end()
   call dein#save_state()
