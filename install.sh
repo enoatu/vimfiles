@@ -1,4 +1,4 @@
-c
+#!/usr/bin/env bash
 set -eux
 
 if [ ! -e ./vimrc ]; then
