@@ -14,7 +14,9 @@ if [ -e dein ]; then
     rm -rf dein
 fi
 
-ln -s ~/vimfiles/vimrc ~/.vimrc
+if [ -e ~/vimfiles ]; then
+    ln -s ~/vimfiles/vimrc ~/.vimrc
+fi
 
 vim +:q
 mkdir -p dein/.cache/.vimrc/.dein/lib
