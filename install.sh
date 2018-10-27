@@ -7,8 +7,6 @@ main () {
     setupVimProc
 
     printf "\e[30;42;1mvim setup completed\e[m\n"
-
-    exit 0
 }
 
 directoryCheck () {
