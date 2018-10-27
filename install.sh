@@ -3,9 +3,9 @@ set -eux
 
 main () {
     directoryCheck
+    deinInstall
     setLink
     setupVimProc
-
     printf "\e[30;42;1mvim setup completed\e[m\n"
 }
 
@@ -14,6 +14,12 @@ directoryCheck () {
         printf "\e[37;41;1m Please change current directory \e[m\n"
         exit 1
     fi
+}
+
+deinInstall () {
+    printf "\e[37;44;5mvim open ...\e[m\n"
+    vim +:q
+    printf "\e[37;44;5mvim close\e[m\n"
 }
 
 setLink () {
@@ -25,10 +31,6 @@ setLink () {
         ln -sf ~/vimfiles/vimrc ~/.vimrc
         ln -sf ~/vimfiles/dein.toml ~/.dein.toml
     fi
-
-    printf "\e[37;44;5mvim open ...\e[m\n"
-    vim +:q
-    printf "\e[37;44;5mvim close\e[m\n"
 }
 
 setupVimProc () {
