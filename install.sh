@@ -15,14 +15,16 @@ if [ -e ~/vimfiles ]; then
     ln -sf ~/vimfiles/dein.toml ~/.dein.toml
 fi
 
+printf "\e[37;44;5mvim open ...\e[m\n"
 vim +:q
+printf "\e[37;44;5mvim close\e[m\n"
 
 mkdir -p dein/.cache/.vimrc/.dein/lib
 cd ./dein/.cache/.vimrc/.dein/lib
 git clone https://github.com/Shougo/vimproc.vim.git
 cd vimproc.vim
 make
-
+printf "\e[30;42;1mvim setup completed\e[m\n"
 if [ -e ./lib/vimproc_linux64.so ]; then
     ln -s vimproc.vim/lib/vimproc_linux64.so ..
 elif [ -e ./lib/vimproc_mac.so ]; then
