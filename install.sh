@@ -20,8 +20,15 @@ setLink () {
     if [ -e dein ]; then
         rm -rf dein
     fi
-    ln -sf vimrc ~/.vimrc
-    ln -sf dein.toml ~/.dein.toml
+    
+    # For dotfiles
+    if [ -e ../../dotfiles ]; then
+    	ln -sf ./dotfiles/vimfiles/vimrc ~/.vimrc
+        ln -sf ./dotfiles/vimfiles/dein.toml ~/.dein.toml
+    else 
+        ln -sf ./vimfiles/vimrc ~/.vimrc
+        ln -sf ./vimfiles/dein.toml ~/.dein.toml
+    fi
 }
 
 deinInstall () {
