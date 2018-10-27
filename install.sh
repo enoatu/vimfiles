@@ -33,7 +33,7 @@ setLink () {
 
 deinInstall () {
     printf "\e[37;44;5mvim open ...\e[m\n"
-    vim
+    vim +:q
     printf "\e[37;44;5mvim close\e[m\n"
 }
 
