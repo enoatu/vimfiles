@@ -18,7 +18,7 @@ directoryCheck () {
 
 deinInstall () {
     printf "\e[37;44;5mvim open ...\e[m\n"
-    vim +:q
+    vim +":call dein#install()"
     printf "\e[37;44;5mvim close\e[m\n"
 }
 
