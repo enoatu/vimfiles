@@ -4,6 +4,7 @@ set -eux
 main () {
     directoryCheck
     setLink
+    sleep 3s
     deinInstall
     setupVimProc
     printf "\e[30;42;1mvim setup completed\e[m\n"
@@ -16,12 +17,6 @@ directoryCheck () {
     fi
 }
 
-deinInstall () {
-    printf "\e[37;44;5mvim open ...\e[m\n"
-    vim
-    printf "\e[37;44;5mvim close\e[m\n"
-}
-
 setLink () {
     if [ -e dein ]; then
         rm -rf dein
@@ -31,6 +26,12 @@ setLink () {
         ln -sf ~/vimfiles/vimrc ~/.vimrc
         ln -sf ~/vimfiles/dein.toml ~/.dein.toml
     fi
+}
+
+deinInstall () {
+    printf "\e[37;44;5mvim open ...\e[m\n"
+    vim
+    printf "\e[37;44;5mvim close\e[m\n"
 }
 
 setupVimProc () {
