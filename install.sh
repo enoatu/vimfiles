@@ -3,8 +3,8 @@ set -eux
 
 main () {
     directoryCheck
-    deinInstall
     setLink
+    deinInstall
     setupVimProc
     printf "\e[30;42;1mvim setup completed\e[m\n"
 }
@@ -18,7 +18,7 @@ directoryCheck () {
 
 deinInstall () {
     printf "\e[37;44;5mvim open ...\e[m\n"
-    vim +":call dein#install()"
+    vim +":call dein#install()q"
     printf "\e[37;44;5mvim close\e[m\n"
 }
 
