@@ -4,8 +4,8 @@ set -eux
 main () {
     directoryCheck
     setLink
-    deinInstall
-    setupVimProc
+   # deinInstall
+   # setupVimProc
     printf "\e[30;42;1mvim setup completed\e[m\n"
 }
 
@@ -20,7 +20,6 @@ setLink () {
     if [ -e dein ]; then
         rm -rf dein
     fi
-    
     # For dotfiles
     if [ -e ../../dotfiles ]; then
     	ln -sf ./dotfiles/vimfiles/vimrc ~/.vimrc
