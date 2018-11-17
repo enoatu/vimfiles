@@ -59,8 +59,10 @@ endif
  " インデントはスマートインデント
  set smartindent
 
- " インデントはスマートインデント
-set smartindent
+"通常モードはブロック型点滅有り
+"挿入モードはライン型点滅有り
+let &t_SI .= "\e[5 q"
+let &t_EI .= "\e[1 q"
 " ビープ音を可視化
 set visualbell
 " 括弧入力時の対応する括弧を表示
@@ -98,9 +100,6 @@ set ttimeoutlen=10
 "  Start interactive EasyAlign for a motion/text object (e.g. gaip)
  nmap ga <Plug>(EasyAlign)
 
-"set autoindent
-set smartindent
-
 set mouse=a
 
 set number
@@ -111,7 +110,6 @@ set expandtab
 
 set hidden
 "set tabstop=4
-imap ffff # Atsushi ENOMOTO <enotiru@moove.co.jp> moove Co., Ltd.
 set whichwrap=b,s,<,>,[,]
 set tabstop=4
 set shiftwidth=4
@@ -128,7 +126,7 @@ inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 "===================space red========================
-augroup HighlightTrailingSpaces
+augroup HighlightTraijingSpaces
     autocmd!
     autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
     autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
@@ -192,7 +190,6 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
 
  " For conceal markers.
  "if has('conceal')
