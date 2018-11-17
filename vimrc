@@ -3,7 +3,7 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 "dein Scripts-----------------------------
 " dein.vim がなければ github から落としてくる
-let s:dein_dir = expand('~/dotfiles/dotfiles/vimfiles/dein')
+let s:dein_dir = expand('~/dotfiles/dotfiles/dotfiles/vimfiles/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
@@ -122,13 +122,11 @@ set t_Co=256
 cnoremap w!! w !sudo tee > /dev/null %<CR>
 "================括弧補完===========
 inoremap { {}<Left>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap ( ()<ESC>i
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-"inoremap {<Enter> {}<Left><CR><ESC><S-o>
-"inoremap [<Enter> []<Left><CR><ESC><S-o>
-"inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
+inoremap {<Enter> {}<Left><CR><BS><BS><BS><BS><ESC><S-o>
+inoremap ( ()<ESC>
+inoremap (<Enter> ()<Left><CR><BS><BS><BS><BS><ESC><S-o>
+inoremap ( []<ESC>
+inoremap (<Enter> []<Left><CR><BS><BS><BS><BS><ESC><S-o>
 "===================space red========================
 augroup HighlightTraijingSpaces
     autocmd!
