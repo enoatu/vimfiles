@@ -3,7 +3,7 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 "dein Scripts-----------------------------
 " dein.vim がなければ github から落としてくる
-let s:dein_dir = expand('~/dotfiles/vimfiles/dein')
+let s:dein_dir = expand('~/dotfiles/dotfiles/vimfiles/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
@@ -121,22 +121,10 @@ colorscheme molokai
 set t_Co=256
 cnoremap w!! w !sudo tee > /dev/null %<CR>
 "================括弧補完===========
-inoremap <expr><CR> <SID>ExCr()
-function! s:ExCr()
-    if col('.') != col('$')
-        return "\<CR>"
-    endif
-    let l = getline('.')
-    if l =~ '{$'
-        return "\<CR>}\<Up>\<End>\<CR>"
-    elseif l =~ '($'
-        return "\<CR>)\<Up>\<End>\<CR>"
-    elseif l =~ '[$'
-        return "\<CR>]\<Up>\<End>\<CR>"
-    else
-        return "\<CR>"
-    endif
-endfunction
+inoremap { {}<Left>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap ( ()<ESC>i
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 "inoremap {<Enter> {}<Left><CR><ESC><S-o>
 "inoremap [<Enter> []<Left><CR><ESC><S-o>
 "inoremap (<Enter> ()<Left><CR><ESC><S-o>
