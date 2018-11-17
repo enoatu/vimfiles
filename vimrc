@@ -121,6 +121,7 @@ syntax on
 colorscheme molokai
 "colorscheme random
 set t_Co=256
+cnoremap w!! w !sudo tee > /dev/null %<CR>
 "================括弧補完===========
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
