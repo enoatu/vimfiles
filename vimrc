@@ -199,29 +199,29 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
  "endif
 
  " ~ファイルタイプ毎 & gitリポジトリ毎にtagsの読み込みpathを変える~
- function! ReadTags(type)
-     try
-       execute "set tags=".$HOME."/dotfiles/tags_files/".
-            \ system("cd " . expand('%:p:h') . "; basename `git rev-parse --show-toplevel` | tr -d '\n'").
-           \ "/" . a:type . "_tags"
-      catch
-        execute "set tags=./tags/" . a:type . "_tags;"
-     endtry
- endfunction
+function! ReadTags(type)
+    try
+      execute "set tags=".$HOME."/dotfiles/tags_files/".
+           \ system("cd " . expand('%:p:h') . "; basename `git rev-parse --show-toplevel` | tr -d '\n'").
+          \ "/" . a:type . "_tags"
+     catch
+       execute "set tags=./tags/" . a:type . "_tags;"
+    endtry
+endfunction
 
- augroup TagsAutoCmd
-     autocmd!
-     autocmd BufEnter * :call ReadTags(&filetype)
- augroup END
+augroup TagsAutoCmd
+    autocmd!
+    autocmd BufEnter * :call ReadTags(&filetype)
+augroup END
 
- "====================mattn/emmet-vim===============html補完
- let g:user_emmet_leader_key='<C-t>'
- "====================vim-json=========================
- let g:vim_json_syntax_conceal = 0
- "====================nerdtree============================
- map <C-n> :NERDTreeToggle<CR>
- "======================gitgutter===================
- "画面をガタガタ言わせない
- set signcolumn=yes
- "タイピング終了後すぐに反映する
- set updatetime=100
+"====================mattn/emmet-vim===============html補完
+let g:user_emmet_leader_key='<C-t>'
+"====================vim-json=========================
+let g:vim_json_syntax_conceal = 0
+"====================nerdtree============================
+map <C-n> :NERDTreeToggle<CR>
+"======================gitgutter===================
+"画面をガタガタ言わせない
+set signcolumn=yes
+"タイピング終了後すぐに反映する
+set updatetime=100
