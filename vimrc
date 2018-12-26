@@ -102,6 +102,9 @@ set ttimeoutlen=10
 
 set mouse=a
 
+" ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
+set wrap
+
 set number
 set clipboard+=autoselect
 set clipboard+=unnamed
@@ -266,6 +269,6 @@ let g:vim_json_syntax_conceal = 0
 map <C-n> :NERDTreeToggle<CR>
 "======================gitgutter===================
 "画面をガタガタ言わせない
-set signcolumn=yes
+"set signcolumn=yes
 "タイピング終了後すぐに反映する
 set updatetime=100
