@@ -3,7 +3,7 @@ set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 "dein Scripts-----------------------------
 " dein.vim がなければ github から落としてくる
-let s:dein_dir = expand('~/vimfiles/dein')
+let s:dein_dir = expand('~/dotfiles/vimfiles/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
@@ -248,11 +248,11 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
  " ~ファイルタイプ毎 & gitリポジトリ毎にtagsの読み込みpathを変える~
 function! ReadTags(type)
     try
-      execute "set tags=".$HOME."/dotfiles/tags_files/".
+        execute "set tags=".$HOME."/dotfiles/tags_files/".
            \ system("cd " . expand('%:p:h') . "; basename `git rev-parse --show-toplevel` | tr -d '\n'").
           \ "/" . a:type . "_tags"
      catch
-       execute "set tags=./tags/" . a:type . "_tags;"
+        execute "set tags=./tags/" . a:type . "_tags;"
     endtry
 endfunction
 
@@ -271,4 +271,12 @@ map <C-n> :NERDTreeToggle<CR>
 "画面をガタガタ言わせない
 "set signcolumn=yes
 "タイピング終了後すぐに反映する
-set updatetime=100
+set updatetime=200
+
+"======================indentline=================
+"Vim起動時に可視化を有効にする場合は下記設定を追加。
+let g:indent_guides_enable_on_vim_startup = 1
+"インデント奇数と偶数行で色設定
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
