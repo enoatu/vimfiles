@@ -102,6 +102,9 @@ set ttimeoutlen=10
 
 set mouse=a
 
+" ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
+set wrap
+
 set number
 set clipboard+=autoselect
 set clipboard+=unnamed
@@ -155,7 +158,7 @@ set showtabline=2 " 常にタブラインを表示
 
 " The prefix key.
 nnoremap    [Tag]   <Nop>
-nmap    t [Tag]
+nmap    m [Tag]
 " Tab jump
 for n in range(1, 9)
   execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
@@ -266,6 +269,6 @@ let g:vim_json_syntax_conceal = 0
 map <C-n> :NERDTreeToggle<CR>
 "======================gitgutter===================
 "画面をガタガタ言わせない
-set signcolumn=yes
+"set signcolumn=yes
 "タイピング終了後すぐに反映する
 set updatetime=100
