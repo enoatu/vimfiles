@@ -187,6 +187,7 @@ set backspace=indent,eol,start
 let g:airline_theme = 'molokai'
 " ===================Yggdroot/indentLine==============
 let g:indentLine_char = '¦'
+let g:indentLine_conceallevel  =  2
 "====================neocomplcache====================
 " ~Disable AutoComplPop. neocomplcashe~
 let g:acp_enableAtStartup = 0
