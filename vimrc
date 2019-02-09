@@ -272,13 +272,3 @@ map <C-n> :NERDTreeToggle<CR>
 "set signcolumn=yes
 "タイピング終了後すぐに反映する
 set updatetime=200
-
-"======================indentline=================
-"Vim起動時に可視化を有効にする場合は下記設定を追加。
-let g:indent_guides_enable_on_vim_startup = 1
-"インデント奇数と偶数行で色設定
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-let g:indent_guides_guide_size = 2
-let g:indent_guides_start_level = 1
